@@ -69,3 +69,64 @@ class Solution:
 
 2. 迭代法(Iteration)
 
+因为先访问登记的不是root, 故先将stack初始化为空
+
+```python
+class Solution:
+    def inorderTraversal(self, root: TreeNode) -> List[int]:
+        
+        stack,result=[],[]
+        while root or stack:
+            if root:
+                stack.append(root)
+                root=root.left
+            
+            else:
+                root=stack.pop()
+                result.append(root.val)
+                root=root.right
+        return result
+```
+
+**树的后序遍历(postorder)**
+
+​	1.递归法
+
+同之前的方法思路一样，改变一下访问节点值的顺序
+
+```python
+class Solution:
+    def preorderTraversal(self, root: TreeNode) -> List[int]:
+        result=[]
+        self.dfs(root, result)
+        return result
+        
+    def dfs(self, node:TreeNode, result: List[int]):
+        if node:
+            self.dfs(node.left,result)
+            self.dfs(node.right,result)
+            result.append(node.val)
+```
+
+2. 迭代法
+
+后序遍历的迭代法会复杂一些，需要添加一个`visited`变量来标记是否将当前节点的左子树，右子树添加进了stack
+
+```python
+class Solution:
+    def postorderTraversal(self, root: TreeNode) -> List[int]:
+        
+        result, stack= [],[(root,False)]
+        
+        while stack:
+            node, visited=stack.pop()
+            if node:
+                if visited:
+                    result.append(node.val)
+                else:
+                    stack.append((node,True))
+                    stack.append((node.right,False))
+                    stack.append((node.left,False))
+        return result            
+```
+
