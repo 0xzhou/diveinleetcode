@@ -1,4 +1,8 @@
-**树的前序遍历**(preorder)
+### Binary Tree
+
+#### Traverse A Tree
+
+**前序遍历**(pre-order)
 
 [根节点， 左子树， 右子树]
 
@@ -47,7 +51,9 @@ class Solution:
 
 
 
-**树的中序遍历**(inorder)
+**中序遍历**(inorder)
+
+对于*二叉搜索树*，中序遍历可以得到升序数组。
 
 1. 递归法(Recursion)
 
@@ -88,7 +94,9 @@ class Solution:
         return result
 ```
 
-**树的后序遍历(postorder)**
+**后序遍历(postorder)**
+
+Post-order is widely used in mathematical expression. If you handle this tree in postorder, you can easily handle the expression using a stack. Each time when you meet a operator, you can just pop 2 elements from the stack, calculate the result and push the result back into the stack.
 
 ​	1.递归法
 
