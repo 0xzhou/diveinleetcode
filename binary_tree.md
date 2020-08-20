@@ -144,35 +144,35 @@ Level-order traversal is to traverse the tree level by level. Generally it is ba
 
 1. 迭代法
 
+​	利用deque结构来存储当前层的所有node，在利用for循环遍历node，保存node的值，再将node的左右子树保存起来。
+
 ```python
+from collections import deque
 class Solution:
-    def levelOrder(self, root: TreeNode) -> List[List[int]]:
-        
-        levels=[]
-        
-        if not root:
-            return levels
-        
-        level=0
-        queue=deque([root,])
+    def levelOrder(self, root):
+        if not root: return [] #base case 
+        res = []
+        #queue to store all the nodes
+        queue = deque([root]) 
+
         while queue:
-            levels.append([])
-            level_length=len(queue)
-            
-            for i in range(level_length):
-                node= queue.popleft()
-                levels[level].append(node.val)
-                
+            level = [] #hold the values at the current level.
+            for _ in range(len(queue)): 
+                node = queue.popleft()
                 if node.left:
                     queue.append(node.left)
                 if node.right:
-                    queue.append(node.right)         
-            level+=1
-            
-        return levels
+                    queue.append(node.right)
+                level_vals.append(node.val)
+            res.append(level)
+        return res
 ```
 
 2. 递归法
+
+将树n层结构用n层list来保存，n层list再保存在一个大的二维数组中。
+
+递归函数输入将要访问的节点和节点层数，需要节点层数的原因是，需要定位录入二维数组中哪个的list，值得注意的是，需要先为当前层创建新的list，然后保存当前层的数据，最后再递归访问下一层。-> 保存数据 = 空间 + 保存操作
 
 ```python
 class Solution:
