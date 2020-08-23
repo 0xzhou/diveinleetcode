@@ -228,7 +228,26 @@ And the depth of the tree might be `N` in the worst case. That is to say, the le
 
 #### Solve Problems Recursively
 
+##### Maximum Depth of Binary Tree (104-Easy)
 
+1.递归法
+
+`maxDepth()`的意思是，返回当前节点的最深深度。利用该性质可以递归。
+
+如果root为空，height返回0。如果为非空，递归左子树，递归右子树，将最深深度+1。
+
+```python
+class Solution:
+    def maxDepth(self, root: TreeNode) -> int:
+        
+        if not root:
+            return 0
+        
+        left_height=self.maxDepth(root.left)
+        right_height=self.maxDepth(root.right)
+        
+        return max(left_height, right_height) +1
+```
 
 #### Conclusion
 
