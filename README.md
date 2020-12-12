@@ -6,7 +6,11 @@
 - [Binary Search Tree](https://github.com/Mingy2018/diveinleetcode/blob/master/Binary Search Tree.md)
 - [Hash Table]()
 - [Linked List](https://github.com/Mingy2018/diveinleetcode/blob/master/Linked_List.md)
-- [Array]()
+- [Arrays 101]()
 - [Queue & Stack]()
+- [N-art Tree]()
+- [Trie]()
+- [Array and String]()
+- [Decision Tree]()
 
 ### 题目集

@@ -9,6 +9,8 @@ In most cases, we will use the `head` node (the first node) to represent the who
 * drawback compared with array: It takes us `O(N)` time on average to `visit an element by index`
 * ad: `insert` and `delete` operations in next, you will realize the benefit of the linked list.
 
+### Singly Linked List
+
 
 
 #### Add Operation
@@ -46,9 +48,13 @@ Space complexity: O(1).
 
 
 
+### Two Pointer Technique
 
+### Classic Problems
 
-### Reverse Linked List
+#### Reverse Linked List
+
+Solution: `iterate the nodes in original order and move them to the head of the list one by one`.
 
 算法思路：
 
@@ -64,9 +70,11 @@ space complexity: $O(1)$
 
 **Details of Algorithm:**
 
+<img src="https://raw.githubusercontent.com/Mingy2018/Markdown-photoes/master/img/20201029161035.png"/>
+
 keep track of two node: 
 
-* `the original head node`	
+* `the original head node` 最原始的头	
 * `the new head node`
 
 We use two pointers in one linked list at the same time.  One pointer `head` always points at out original head node, and `curHead` always points at our newest head node.
@@ -84,4 +92,12 @@ See the example:
 3. Now, out linked list actually looks like the picture below, and we set `curHead` to be `p`
 
    ![img](https://s3-lc-upload.s3.amazonaws.com/uploads/2018/04/15/screen-shot-2018-04-14-at-182507.png)
+
+
+
+### Doubly Linked List
+
+### Conclusion
+
+### Discuss
 
